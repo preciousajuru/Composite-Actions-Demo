@@ -1,0 +1,14 @@
+name: "My CLI Actions"
+description: "A reusable composite action for running CLI commands"
+
+inputs:
+  cli-command:
+    description: "The CLI command to run"
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Run CLI command
+      run: ${{ inputs.cli-command }}
+      shell: bash
